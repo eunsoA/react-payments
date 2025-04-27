@@ -14287,8 +14287,8 @@ new TextEncoder();
   304
 ]);
 const ROUTES = Object.freeze({
-  CARD_REGISTRATION: "/",
-  CARD_COMPLETE: "/complete"
+  CARD_REGISTRATION: "/react-payments/",
+  CARD_COMPLETE: "/react-payments/complete"
 });
 const CARD_IMAGE_PATH = Object.freeze({
   VISA: "./Visa.svg",
