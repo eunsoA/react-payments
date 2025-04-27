@@ -1,27 +1,14 @@
-.app-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+.card-preview-wrapper {
+  padding: 4.8rem 0 0 0;
 }
 
-.card-container {
-  width: 375px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 30px;
-}
 .card-background {
-  background-color: #333333;
-  width: 212px;
-  height: 132px;
-  padding: 8px 12px;
+  width: 13.25rem;
+  height: 8.25rem;
+  padding: 0.5rem 0.75rem;
   color: #333333;
-  border-radius: 4px;
+  border-radius: 0.25rem;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.25);
 }
 .card-preview-container {
   display: flex;
@@ -62,25 +49,29 @@
   letter-spacing: 2.24px;
 }
 .secret {
-  letter-spacing: 2px;
-  /* TODO : claire -1px로 변경 */
+  letter-spacing: -1px;
 }
 .card-info-container {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin: 45px 0 0;
+  gap: 1rem;
+  margin: 2.8rem 0 0;
+  padding: 0 2rem 5rem;
+  box-sizing: border-box;
+  flex: 1;
+  overflow-y: auto;
+  max-height: calc(100% - 13.25rem);
 }
 .card-info-section {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .card-info-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 
@@ -93,11 +84,11 @@
 .card-info-sub-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .card-info-subtitle {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   line-height: 15px;
 }
@@ -105,7 +96,7 @@
 .card-info-input-container {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 0.625rem;
   width: 100%;
 }
 
@@ -115,32 +106,125 @@
   box-sizing: border-box;
 }
 
-/* flex: 1 1 0 → 남는 공간 비례 배분 + 줄어드는 것도 허용
-min-width: 0 → 이거 없으면 기본 최소 너비 때문에 shrink가 안 되기도 함
-box-sizing: border-box → padding 포함한 너비 계산 */
-
 .card-info-error {
   color: #ff3d3d;
   font-size: 9.5px;
   font-weight: 400;
+  height: 9.5px;
 }
-.custom-input {
+.cardInfo-input {
   border-radius: 2px;
   border:
     1.015px solid,
     #acacac;
   padding: 8px;
 }
-.custom-input::placeholder {
+.cardInfo-input::placeholder {
   color: #acacac;
 }
-.custom-input:focus {
+.cardInfo-input:focus {
   border:
     1.015px solid,
     black;
 }
-.custom-input-error {
+.cardInfo-input-error {
   border: 1.015px solid #ff3d3d;
+}
+.cardInfo-select {
+  width: 100%;
+  border-radius: 2px;
+  border:
+    1.015px solid,
+    #acacac;
+  padding: 0.5rem;
+}
+
+.cardInfo-select > option:first-child {
+  color: #acacac;
+}
+
+.cardInfo-select:focus {
+  border:
+    1.015px solid,
+    black;
+}
+
+.cardInfo-select-error {
+  border: 1.015px solid #ff3d3d;
+}
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1.25rem 0;
+  background-color: #333333;
+  color: #f3f3f3;
+  font-size: 1rem;
+  font-weight: 700;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.card-complete-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-complete-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+  gap: 2.3rem;
+}
+
+.icon-check {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.complete-message-content p {
+  color: #353c49;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.confirm-button {
+  width: 100%;
+  max-width: 20rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.75rem 0;
+  font-size: 1rem;
 }
 html,
 body,
@@ -294,4 +378,27 @@ input[type='number']::-webkit-inner-spin-button {
 /* Firefox */
 input[type='number'] {
   -moz-appearance: textfield;
+  appearance: none;
+}
+
+select {
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  background-image: url(./icon_arrow_down.svg);
+  background-size: 1rem;
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+}
+
+select:focus {
+  border: none;
+  outline: none;
 }
