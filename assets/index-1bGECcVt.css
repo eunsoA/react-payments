@@ -392,10 +392,10 @@ select {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  background-image: url(./icon_arrow_down.svg);
   background-size: 1rem;
   background-position: right 0.5rem center;
   background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4.04019%205.72987L7.86012%209.5498L11.6801%205.72987'%20stroke='black'%20stroke-width='1.32867'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e");
 }
 
 select:focus {
